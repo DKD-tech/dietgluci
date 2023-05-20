@@ -4,8 +4,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Image } from 'react-native-animatable'
 
 const Historique = ({ historique, suppScan }) => {
-  // ...
+  // Notre page de recuperation des produits scanner en historique
   return (
+    // Notre view
     <View  className="bg-slate-50  rounded-1xl opacity-75 px-4 h-72 w-80 rounded-xl items-center mt-6">
     <View className="flex-row justify-between bg-white rounded-xl w-80 items-center object-cover">
     <Text className="text-slate-900 text-lg font-bold p-4  justify-between px-4">Historique des scans</Text>
@@ -13,6 +14,7 @@ const Historique = ({ historique, suppScan }) => {
     <FontAwesome name="close" size={18} color="black" />
       </TouchableOpacity>
     </View>
+    {/* Section de recuperation des produits qui vient d'être scanner  et l'affiche en fonction du dernier produit scanner sinon rescanner à nouveau */}
       {historique && historique.length > 0 ? (
         <Carousel
           data={historique.reverse()}

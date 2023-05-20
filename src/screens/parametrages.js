@@ -3,9 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 
 const ParametragePage = () => {
+  // Notre de parametrage specifique pour les Diabétiques 
+  // ratio d'insuilne
   const [insulinRatio, setInsulinRatio] = useState('');
+
+  // taux de sucre dans le sang
   const [bloodSugar, setBloodSugar] = useState('');
+
+  // Dose d'insuline à administrer
   const [insulinDose, setInsulinDose] = useState('');
+
+  // Quanités des glucides contenu dans les differents reépa
   const [carbohydrates, setCarbohydrates] = useState({
     breakfast: '',
     lunch: '',
@@ -16,6 +24,7 @@ const ParametragePage = () => {
     calculateInsulinDose();
   }, [bloodSugar, insulinDose, carbohydrates]);
 
+  // S'assurer de l'utilisation des valeurs numérique dans nos calculs
   const calculateInsulinDose = () => {
     const parsedInsulinRatio = parseFloat(insulinRatio);
     const parsedBloodSugar = parseFloat(bloodSugar);
@@ -40,6 +49,7 @@ const ParametragePage = () => {
     setInsulinDose(adjustedInsulinDose.toFixed(2));
   };
 
+  // Calcul d'insuline en fonction des differents données saisies
   const handleCarbsChange = (meal, value) => {
     setCarbohydrates(prevCarbs => ({
       ...prevCarbs,
@@ -48,6 +58,8 @@ const ParametragePage = () => {
   };
 
   return (
+
+    // Page d'affichage à l'ecran
     <View>
       <Text>Ratio d'insuline à glucides :</Text>
       <TextInput

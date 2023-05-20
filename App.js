@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -15,6 +13,9 @@ YellowBox.ignoreWarnings(['']);
 
 // Désactiver les erreurs
 console.error = () => {};
+
+// App.js represente notre page principale  qui s'assure de  la navigation entre nos differents pages
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

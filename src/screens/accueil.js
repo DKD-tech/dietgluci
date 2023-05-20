@@ -5,8 +5,11 @@ import * as Animatable from 'react-native-animatable';
 import { StatusBar } from 'expo-status-bar';
 import { LogoImage } from '../../assets';
 
+
+// La première qui s'affiche dans l'ordre d'affichage dans App.js 
 const accueil = () => {
 
+  // Creons une constante de navigation  pour naviguer de la page d'accueil a une page
 
     const navigation = useNavigation();
 
@@ -17,6 +20,7 @@ const accueil = () => {
     },[])
 
   return (
+    //Mis en place de notre view d'interface
     <SafeAreaView className="bg-white flex-1 relative">
       <StatusBar/>
         
@@ -43,7 +47,7 @@ const accueil = () => {
 
            source={LogoImage} className="w-[350px] h-[350px] object-cover mb-28"/>
          
-         
+         {/* Button commencer pour naviguer rs la page recherche */}
          <TouchableOpacity 
          onPress={()=> navigation.navigate("navigation")}
          className="absolute bottom-20 w-52 h-20 border-r-2 border-t-4 border-[#85C1E9] rounded-2xl items-center justify-center">

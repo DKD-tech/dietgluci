@@ -1,34 +1,30 @@
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import accueil from "../screens/accueil";
 import recherche from "../screens/recherche";
 import React, {useLayoutEffect, useState} from "react";
 import scanner from "../screens/scanner"
-// import historique from "../screens/historique"
-import Historique from "../screens/historique";
 import Parametrage from "../screens/parametrages";
 
 
+// Notre page de TabBar
+//  Nous avons 3 tabBar
+
 const appNavigation = ({navigation})=>{
     const Tab = createBottomTabNavigator();
-    const [historique, setHistorique] = useState([]); 
-    // const [historique, setHistorique] = useState([]);
+    const [historique, setHistorique] = useState([]);
 
     useLayoutEffect(()=>{
         navigation.setOptions({
             headerShown: false,
         })
     },[])
-// Fonction pour ajouter un produit à l'historique
-// const ajouterProduitAHistorique = (product) => {
-//     // Ajoutez le produit à l'historique
-//     const nouvelHistorique = [...historique, product];
-//     setHistorique(nouvelHistorique);
-//   };
+
     return(
+
+        // Nos tabBar, parametrer l'option d'affichage , icone et autre
         
         <Tab.Navigator
-        
+    
           screenOptions={({route})=>({
             tabBarIcon:({focused, size, color})=>{
                 let iconName;
@@ -54,6 +50,7 @@ const appNavigation = ({navigation})=>{
       barStyle={{backgroundColor:"#694fad"}}
         >
 
+{/* Nos tabScreen */}
         <Tab.Screen name="recherche" component={recherche}/>
         <Tab.Screen name="scanner" component={scanner}/>
  <Tab.Screen
