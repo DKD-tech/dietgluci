@@ -1,0 +1,2 @@
+Notre api n'est pas fonctionnel , il manque des ajustements dans la page configMongoDB et glucideSchema 
+qui sont chargé de recuperer la consomation en fonction des jours
