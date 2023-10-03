@@ -37,7 +37,7 @@ function Scanner({navigation, ajouterProduitAHistorique}){
         (item) => item.code === product.code
       );
 
-      // verifier si le produit scanner est dans l'historique et n'a pas l'afficher deux fois
+      // verifier si le produit scanner est dans l'historique et affiche une seule fois dans la liste 
 
       if (!isAlreadyInHistory) {
         return [...prevHistorique, product];
